@@ -39,32 +39,34 @@ Pentester'lar, bug bounty avcıları ve güvenlik araştırmacıları için tasa
 
 ---
 
-# ⚡ **Kurulum**
+## ⚡ Kurulum
 
-## 📌 PyPI (Önerilen)
+### 🔧 PyPI (Önerilen)
 
 ```bash
 pip install znuzhgfw
+
 📌 Kaynak Koddan
 
-Kodu kopyala
 git clone https://github.com/znuzhg/znuzhgfw.git
 cd znuzhgfw
 pip install -r requirements.txt
+
 🎯 Kullanım (CLI)
 Basit tarama
-
 znuzhgfw --url https://example.com
+
 Derin tarama
-
 znuzhgfw --url https://example.com --depth 2 --threads 10
+
 Cookie ile tarama
-
 znuzhgfw --url https://target.com --cookies "PHPSESSID=xx; token=yy"
-Markdown / JSON raporu
 
+Markdown / JSON raporu
 znuzhgfw --url https://example.com --report-format md --out scan.md
+
 🧬 Modül Yönetimi
+
 Şu anda tüm modüller otomatik çalışır.
 v0.4.0 ile:
 --modules sqli,xss,headers gibi seçilebilir modüller aktif olacak.
