@@ -1,72 +1,127 @@
-# ZNUZHG Pentest Framework v0.2
+<div align="center">
 
-> ONLY FOR AUTHORIZED SECURITY TESTING & EDUCATIONAL USE
+🔥 **ZNUZHGFW**  
+**Red-Team Style Web Vulnerability Scanner**
 
-ZNUZHG Pentest Framework, web uygulamalarını otomatik olarak taramak için
-tasarlanmış modüler, genişletilebilir bir güvenlik tarayıcısıdır.
+_Aggressive. Fast. Modular. Offensive Mindset. Defensive Purpose._
 
-## Özellikler
+</div>
 
-- 🌐 Crawler (aynı domain içinde gezinti, depth kontrollü)
-- 🧪 SQL Injection Testleri
-  - Boolean-based
-  - Error-based
-  - Time-based (Blind)
-- 💥 XSS Testleri
-  - Reflected XSS
-  - DOM-based XSS sink tespiti
-- 📂 LFI / Path Traversal Testleri
-- 🔁 Open Redirect Testleri
-- 🧱 Security Header Analizi
-- 🚦 Rate Limit Analizi
-- 🛡️ WAF (Cloudflare, Sucuri vb.) Basit Tespiti
-- 🧠 SSTI (Server-Side Template Injection) Basit Testleri
-- 📜 CRLF Injection Denemeleri
-- 🧭 HTTP Methods Analizi (OPTIONS, TRACE)
-- 📁 Directory Bruteforce (basit wordlist ile)
-- 🧵 Multi-threaded tarama
-- 📝 Markdown + HTML rapor üretimi
-- 📜 Ayrıntılı log dosyası
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Framework-Red%20Team-black?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Made%20By-ZNUZHG-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-black?style=for-the-badge" />
+</p>
 
-## Kurulum
+---
+
+## 🩸 **Nedir Bu?**
+
+**ZNUZHGFW**, agresif ve Red-Team odaklı bir web güvenlik tarayıcısıdır.  
+Pentester'lar, bug bounty avcıları ve güvenlik araştırmacıları için tasarlanmış modüler, hızlı ve genişletilebilir bir framework.
+
+### ✔ **Dahili Modüller**
+- 🧨 **SQL Injection Scanner** (Boolean / Error / Time)
+- ⚔️ **XSS Scanner** (Reflected / DOM)
+- 📂 **LFI / Path Traversal**
+- 🔁 **Open Redirect**
+- 🧱 **Security Headers Analyzer**
+- 🚦 **Rate-Limit Tester**
+- 🛡️ **WAF Detector** (Cloudflare / Sucuri basic)
+- 🧠 **SSTI Detector**
+- 📜 **CRLF Injection**
+- 🧭 **HTTP Methods Analyzer**
+- 📁 **Directory Brute-Force**
+- 🕷️ **Crawler** (Depth-controlled spider)
+- 🔥 **Multithreaded Engine**
+- 📄 **HTML, Markdown, JSON Report Generator**
+
+---
+
+# ⚡ **Kurulum**
+
+## 📌 PyPI (Önerilen)
 
 ```bash
-git clone https://github.com/znuzhg/znuzhg_pentest_framework.git
-cd znuzhg_pentest_framework
+pip install znuzhgfw
+📌 Kaynak Koddan
+
+Kodu kopyala
+git clone https://github.com/znuzhg/znuzhgfw.git
+cd znuzhgfw
 pip install -r requirements.txt
+🎯 Kullanım (CLI)
+Basit tarama
 
-Kullanım
-python3 main.py \
-  --url "https://hedef-sistem.com/" \
-  --depth 1 \
-  --threads 5 \
-  --cookies "PHPSESSID=xxx; token=yyy" \
-  --modules all \
-  --report-md report.md \
-  --report-html report.html
+znuzhgfw --url https://example.com
+Derin tarama
 
+znuzhgfw --url https://example.com --depth 2 --threads 10
+Cookie ile tarama
 
-Belirli modüllerle çalıştırmak için:
+znuzhgfw --url https://target.com --cookies "PHPSESSID=xx; token=yy"
+Markdown / JSON raporu
 
-python3 main.py \
-  --url "https://hedef-sistem.com/" \
-  --modules "sqli,xss,headers"
+znuzhgfw --url https://example.com --report-format md --out scan.md
+🧬 Modül Yönetimi
+Şu anda tüm modüller otomatik çalışır.
+v0.4.0 ile:
+--modules sqli,xss,headers gibi seçilebilir modüller aktif olacak.
 
-Uyarı (Legal / Etik)
+🕶 Red-Team Rapor Arayüzü
+Oluşturulan HTML raporu koyu tema + kırmızı neon çizgiler ile tasarlanmıştır.
 
-Bu framework yalnızca:
+Örnek:
 
-Kendi sistemlerinizde
+mathematica
+[ ZNUZHGFW ]
+Red Team Style Web Vulnerability Scanner
+Target: https://example.com
+Generated: 2025-11-24
 
-Açıkça yazılı izin aldığınız hedeflerde
+Security Headers → 5 LOW  
+HTTP Methods → INFO  
+Rate Limit → INFO  
+...
+⚠️ Yasal Uyarı (LEGAL NOTICE)
+<div style="background:#200; padding:12px; border-left:4px solid #f00;">
+Bu araç sadece:
 
-Eğitim ve savunma amaçlı
+🔹 Kendi sistemlerinizde
+
+🔹 Yazılı izin aldığınız hedeflerde
+
+🔹 Eğitim ve savunma amacıyla
 
 kullanılmalıdır.
 
-İzinsiz sistemlere karşı kullanmak, hem etik değildir hem de hukuki sonuçlar doğurabilir.
-Yazar, bu aracın kötüye kullanımından doğacak sonuçlardan sorumlu değildir.
+Yetkisiz kullanım suçtur.
+Geliştirici, kötüye kullanım sonucunda doğabilecek hiçbir eylemden sorumlu değildir.
 
-Lisans
+</div>
+📦 PyPI Metadata
+Alan	Değer
+Paket Adı	znuzhgfw
+Versiyon	0.3.0
+Python	>= 3.10
+Lisans	MIT
 
-MIT
+🤝 Katkı Sağlama
+Katkılar memnuniyetle karşılanır!
+Lütfen şu dosyaları inceleyin:
+
+CONTRIBUTING.md
+
+CODE_OF_CONDUCT.md
+
+SECURITY.md
+
+🧩 Lisans
+Bu proje MIT License ile lisanslanmıştır.
+
+<div align="center">
+🔥 ZNUZHGFW — Offensive Security style, Defensive purpose.
+🜁 “Stay silent. Strike hard.”
+
+</div> ```
