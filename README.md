@@ -42,35 +42,41 @@ Pentester'lar, bug bounty avcıları ve güvenlik araştırmacıları için tasa
 ## ⚡ Kurulum
 
 ### 🔧 PyPI (Önerilen)
-
 ```bash
 pip install znuzhgfw
-
+```
 📌 Kaynak Koddan
-
+```bash
 git clone https://github.com/znuzhg/znuzhgfw.git
 cd znuzhgfw
 pip install -r requirements.txt
-
+```
 🎯 Kullanım (CLI)
+
 Basit tarama
+```bash
 znuzhgfw --url https://example.com
-
+```
 Derin tarama
+```bash
 znuzhgfw --url https://example.com --depth 2 --threads 10
-
+```
 Cookie ile tarama
+```bash
 znuzhgfw --url https://target.com --cookies "PHPSESSID=xx; token=yy"
-
+```
 Markdown / JSON raporu
+```bash
 znuzhgfw --url https://example.com --report-format md --out scan.md
-
+```
+---
 🧬 Modül Yönetimi
 
 Şu anda tüm modüller otomatik çalışır.
 v0.4.0 ile:
 --modules sqli,xss,headers gibi seçilebilir modüller aktif olacak.
 
+---
 🕶 Red-Team Rapor Arayüzü
 Oluşturulan HTML raporu koyu tema + kırmızı neon çizgiler ile tasarlanmıştır.
 
@@ -86,6 +92,8 @@ Security Headers → 5 LOW
 HTTP Methods → INFO  
 Rate Limit → INFO  
 ...
+
+---
 ⚠️ Yasal Uyarı (LEGAL NOTICE)
 <div style="background:#200; padding:12px; border-left:4px solid #f00;">
 Bu araç sadece:
@@ -97,17 +105,20 @@ Bu araç sadece:
 🔹 Eğitim ve savunma amacıyla
 
 kullanılmalıdır.
-
+---
 Yetkisiz kullanım suçtur.
 Geliştirici, kötüye kullanım sonucunda doğabilecek hiçbir eylemden sorumlu değildir.
-
+---
 </div>
+
+---
 📦 PyPI Metadata
 Alan	Değer
 Paket Adı	znuzhgfw
 Versiyon	0.3.0
 Python	>= 3.10
 Lisans	MIT
+---
 
 🤝 Katkı Sağlama
 Katkılar memnuniyetle karşılanır!
@@ -118,12 +129,12 @@ CONTRIBUTING.md
 CODE_OF_CONDUCT.md
 
 SECURITY.md
-
+---
 🧩 Lisans
 Bu proje MIT License ile lisanslanmıştır.
-
+---
 <div align="center">
 🔥 ZNUZHGFW — Offensive Security style, Defensive purpose.
 🜁 “Stay silent. Strike hard.”
 
-</div> ```
+</div>
