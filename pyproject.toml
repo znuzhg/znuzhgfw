@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=77.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "znuzhgfw"
+version = "0.3.0"
+description = "ZNUZHG Pentest Framework — SQLi, XSS, LFI, SSTI, WAF Detection, Directory Enumeration, Spider, Headers Analyzer and more."
+readme = "README.md"
+requires-python = ">=3.10"
+
+# Modern SPDX License
+license = "MIT"
+
+authors = [
+    { name="Znuzhg", email="contact@znuzhg.dev" }
+]
+
+keywords = [
+    "pentest",
+    "security",
+    "scanner",
+    "vulnerability",
+    "xss",
+    "sqli",
+    "cybersecurity",
+    "framework",
+    "web security",
+    "bug bounty",
+    "ethical hacking"
+]
+
+# Modern classifier list (license classifier kaldırıldı — artık SPDX kullanıyoruz)
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+    "Topic :: Internet",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+]
+
+dependencies = [
+    "requests>=2.32.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+# CLI Entry Point
+[project.scripts]
+znuzhgfw = "znuzhgfw.main:main"
+
+# -----------------------------------------------------
+# OPTIONAL - Future: Plugin auto-discovery & scalability
+# -----------------------------------------------------
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["znuzhgfw*"]

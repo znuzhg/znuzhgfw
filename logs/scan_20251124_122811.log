@@ -1,0 +1,14 @@
+[2025-11-24T12:28:11.001846] [CRAWLER] Starting crawl from https://httpbin.org/get, depth=0
+[2025-11-24T12:28:11.002089] [CRAWLER] Fetching https://httpbin.org/get (depth 0)
+[2025-11-24T12:28:13.221698] [CRAWLER] Finished. Total URLs collected: 1
+[2025-11-24T12:28:13.222176] [CORE] Starting scan on 1 URLs with 5 threads
+[2025-11-24T12:28:13.223594] [CORE] Fetching https://httpbin.org/get for scanners
+[2025-11-24T12:28:16.244491] [DIR] Scanning common paths at https://httpbin.org
+[2025-11-24T12:28:25.030561] [HEADERS] Checking security headers for https://httpbin.org/get
+[2025-11-24T12:28:26.787470] [CORE] Error in scanner HeaderScanner for https://httpbin.org/get: Report.add() takes 1 positional argument but 5 were given
+[2025-11-24T12:28:26.788175] [METHODS] Checking HTTP methods for https://httpbin.org/get
+[2025-11-24T12:28:28.000849] [CORE] Error in scanner MethodsScanner for https://httpbin.org/get: Report.add() takes 1 positional argument but 5 were given
+[2025-11-24T12:28:28.001306] [RATE] Testing rate limit for https://httpbin.org/get
+[2025-11-24T12:28:47.344476] [CORE] Error in scanner RateLimitScanner for https://httpbin.org/get: Report.add() takes 1 positional argument but 5 were given
+[2025-11-24T12:28:47.345009] [WAF] Probing https://httpbin.org/get
+[2025-11-24T12:28:47.762874] [CORE] Scan finished

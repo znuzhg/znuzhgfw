@@ -1,0 +1,97 @@
+Metadata-Version: 2.4
+Name: znuzhgfw
+Version: 0.3.0
+Summary: ZNUZHG Pentest Framework — SQLi, XSS, LFI, SSTI, WAF Detection, Directory Enumeration, Spider, Headers Analyzer and more.
+Author-email: Znuzhg <contact@znuzhg.dev>
+License-Expression: MIT
+Keywords: pentest,security,scanner,vulnerability,xss,sqli,cybersecurity,framework,web security,bug bounty,ethical hacking
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Security
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.32.0
+Requires-Dist: beautifulsoup4>=4.12.0
+Dynamic: license-file
+
+# ZNUZHG Pentest Framework v0.2
+
+> ONLY FOR AUTHORIZED SECURITY TESTING & EDUCATIONAL USE
+
+ZNUZHG Pentest Framework, web uygulamalarını otomatik olarak taramak için
+tasarlanmış modüler, genişletilebilir bir güvenlik tarayıcısıdır.
+
+## Özellikler
+
+- 🌐 Crawler (aynı domain içinde gezinti, depth kontrollü)
+- 🧪 SQL Injection Testleri
+  - Boolean-based
+  - Error-based
+  - Time-based (Blind)
+- 💥 XSS Testleri
+  - Reflected XSS
+  - DOM-based XSS sink tespiti
+- 📂 LFI / Path Traversal Testleri
+- 🔁 Open Redirect Testleri
+- 🧱 Security Header Analizi
+- 🚦 Rate Limit Analizi
+- 🛡️ WAF (Cloudflare, Sucuri vb.) Basit Tespiti
+- 🧠 SSTI (Server-Side Template Injection) Basit Testleri
+- 📜 CRLF Injection Denemeleri
+- 🧭 HTTP Methods Analizi (OPTIONS, TRACE)
+- 📁 Directory Bruteforce (basit wordlist ile)
+- 🧵 Multi-threaded tarama
+- 📝 Markdown + HTML rapor üretimi
+- 📜 Ayrıntılı log dosyası
+
+## Kurulum
+
+```bash
+git clone https://github.com/znuzhg/znuzhg_pentest_framework.git
+cd znuzhg_pentest_framework
+pip install -r requirements.txt
+
+Kullanım
+python3 main.py \
+  --url "https://hedef-sistem.com/" \
+  --depth 1 \
+  --threads 5 \
+  --cookies "PHPSESSID=xxx; token=yyy" \
+  --modules all \
+  --report-md report.md \
+  --report-html report.html
+
+
+Belirli modüllerle çalıştırmak için:
+
+python3 main.py \
+  --url "https://hedef-sistem.com/" \
+  --modules "sqli,xss,headers"
+
+Uyarı (Legal / Etik)
+
+Bu framework yalnızca:
+
+Kendi sistemlerinizde
+
+Açıkça yazılı izin aldığınız hedeflerde
+
+Eğitim ve savunma amaçlı
+
+kullanılmalıdır.
+
+İzinsiz sistemlere karşı kullanmak, hem etik değildir hem de hukuki sonuçlar doğurabilir.
+Yazar, bu aracın kötüye kullanımından doğacak sonuçlardan sorumlu değildir.
+
+Lisans
+
+MIT

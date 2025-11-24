@@ -1,0 +1,11 @@
+[2025-11-24T12:57:12.576755] [CRAWLER] Starting crawl from https://httpbin.org/get, depth=0
+[2025-11-24T12:57:12.577022] [CRAWLER] Fetching https://httpbin.org/get (depth 0)
+[2025-11-24T12:57:14.850000] [CRAWLER] Finished. Total URLs collected: 1
+[2025-11-24T12:57:14.850757] [CORE] Starting scan on 1 URLs with 5 threads
+[2025-11-24T12:57:14.852279] [CORE] Fetching https://httpbin.org/get for scanners
+[2025-11-24T12:57:15.740384] [DIR] Scanning common paths at https://httpbin.org
+[2025-11-24T12:57:26.995644] [HEADERS] Checking security headers for https://httpbin.org/get
+[2025-11-24T12:57:29.178940] [METHODS] Checking HTTP methods for https://httpbin.org/get
+[2025-11-24T12:57:30.897906] [RATE] Testing rate limit for https://httpbin.org/get
+[2025-11-24T12:57:47.320056] [WAF] Probing https://httpbin.org/get
+[2025-11-24T12:57:47.872714] [CORE] Scan finished
