@@ -1,4 +1,17 @@
+<div align="center">
+
 # znuzhgfw
+
+**Evidence-oriented web security scanning for authorized assessments**
+
+<p>
+  <img src="https://img.shields.io/badge/PyPI-znuzhgfw-black?style=for-the-badge&logo=pypi&logoColor=white" alt="PyPI package" />
+  <img src="https://img.shields.io/badge/Reports-HTML%20%7C%20JSON%20%7C%20Markdown-8b0000?style=for-the-badge" alt="Report formats" />
+  <img src="https://img.shields.io/badge/Model-Severity%20%7C%20Confidence%20%7C%20Proof-black?style=for-the-badge" alt="Finding model" />
+  <img src="https://img.shields.io/badge/Use-Authorized%20Testing-8b0000?style=for-the-badge" alt="Authorized use only" />
+</p>
+
+</div>
 
 `znuzhgfw` is a Python web security scanner for authorized assessments. It combines a same-origin crawler, a set of focused web scanners, deduplicated findings, and multi-format reporting into a single CLI tool that can be installed from PyPI.
 
