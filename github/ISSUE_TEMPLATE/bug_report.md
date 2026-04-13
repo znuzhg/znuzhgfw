@@ -1,56 +1,59 @@
 ---
-name: "🐞 Bug Report"
-about: "Report a reproducible bug in ZNUZHGFW"
+name: "Bug report"
+about: "Report a reproducible bug in znuzhgfw"
 title: "[BUG] "
 labels: bug
 assignees: ""
 ---
 
-# 🐞 Bug Report
+# Bug Report
 
-Teşekkürler! ZNUZHGFW’de bir hata fark ettiysen, doğru yerdesin.  
-Lütfen aşağıdaki bölümleri mümkün olduğunca detaylı doldur.
-
----
-
-## ✔️ Ön Koşullar
-
-- [ ] Bu hatanın **en güncel sürümde** oluştuğunu doğruladım.
-- [ ] Açık Issues’lar arasında aynı hatayı aradım ve **daha önce raporlanmadığını** kontrol ettim.
+Thanks for taking the time to report a bug in `znuzhgfw`.
+Please provide as much detail as possible.
 
 ---
 
-## 📝 Hata Açıklaması
+## Checklist
 
-Hatanın kısa bir özeti:
-
-**Açıklama:**  
-<!-- Buraya kısa ve net şekilde hatayı açıklayın -->
+- [ ] I confirmed the issue on the latest available version.
+- [ ] I searched existing issues and did not find the same report.
 
 ---
 
-## 🔁 Hatanın Oluşması İçin Adımlar
+## Summary
 
-Lütfen adım adım yazın:
+Describe the problem clearly and briefly.
+
+## Steps to Reproduce
 
 1. …
 2. …
 3. …
-4. …
 
 ---
 
-## 🧪 Beklenen Davranış
+## Expected Behavior
 
-Normalde ne olmasını bekliyordun?
-
----
-
-## 💥 Gerçekleşen Davranış
-
-Program ne yaptı?
+What should have happened?
 
 ---
 
-## 📸 Ekran Görüntüsü / Log (Varsa)
+## Actual Behavior
+
+What happened instead?
+
+---
+
+## Environment
+
+- OS:
+- Python version:
+- `znuzhgfw` version:
+- Installation method (`pip`, editable install, wheel, etc.):
+
+---
+
+## Logs or Screenshots
+
+Add logs, tracebacks, or screenshots if they help reproduce the issue.
 

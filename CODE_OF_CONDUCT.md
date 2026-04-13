@@ -37,7 +37,7 @@ This Code of Conduct applies:
 ## Enforcement
 Instances of abusive, harassing, or unacceptable behavior may be reported privately to:
 
-📧 **znuzhg@yaani.com**
+📧 **contact@znuzhg.dev**
 
 All complaints will be handled discreetly, respectfully, and promptly.  
 Maintainers must respect the privacy and security of anyone submitting a report.

@@ -1,96 +1,105 @@
-# Contributing to ZNUZHGFW
+# Contributing to znuzhgfw
 
-Thanks for your interest in contributing to **ZNUZHGFW – Web Vulnerability Scanner**!  
-This project welcomes contributions from the community and aims to remain clean, secure, and easy to extend.
+Thank you for contributing to `znuzhgfw`.
 
-Whether you're fixing a bug, improving documentation, or adding a new scanner — every contribution helps.
+This project welcomes focused improvements to scanning accuracy, reporting quality, tests, packaging, and documentation. Contributions should prioritize clarity, maintainability, and false-positive control over raw finding volume.
 
----
+## Before You Start
 
-## 💡 How to Contribute
+- Open an issue or start a discussion if the proposed change is large or ambiguous.
+- Keep pull requests focused. Small, reviewable changes are preferred over broad rewrites.
+- Do not add undocumented behavior. If the CLI or reporting output changes, update the relevant documentation.
 
-### 1. Fork the repository
+## Local Setup
 
-Click **“Fork”** on GitHub and clone your fork:
-
-```sh
+```bash
 git clone https://github.com/<your-username>/znuzhgfw.git
 cd znuzhgfw
-2. Create a new branch
-Branch name examples:
+python -m venv .venv
+```
 
-bash
-Kodu kopyala
-feature/add-ssti-scanner
-bugfix/fix-lfi-detection
-docs/update-readme
-Create your own branch:
+Activate the environment:
 
-sh
-Kodu kopyala
-git checkout -b feature/my-feature
-3. Make your changes
-Add features or fix bugs
+```bash
+source .venv/bin/activate
+```
 
-Improve documentation
+On Windows PowerShell:
 
-Follow the existing coding style
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
-Ensure scanners follow the Report API (report.add(...) keyword-only format)
+Install the project in editable mode:
 
-4. Test your changes
-Use the local package build:
+```bash
+pip install -e .
+```
 
-sh
-Kodu kopyala
-pip install -r requirements.txt
-pip install .
-Run a sample scan:
+## Development Workflow
 
-sh
-Kodu kopyala
-znuzhgfw --url https://example.com
-5. Commit your work
-Use clear and descriptive commit messages:
+1. Create a topic branch from `main`.
+2. Make the smallest change that solves the problem.
+3. Add or update tests when behavior changes.
+4. Run the local validation commands.
+5. Open a pull request with a clear description of:
+   - what changed
+   - why it changed
+   - how it was tested
 
-sh
-Kodu kopyala
-git add .
-git commit -m "Add new SSTI scanner"
-6. Push and create a Pull Request
-sh
-Kodu kopyala
-git push origin feature/my-feature
-Go to GitHub → Your repository → “New Pull Request”
+Example branch names:
 
-Describe:
+- `docs/refresh-readme`
+- `fix/rate-limit-heuristics`
+- `test/report-regression`
 
-What you changed
+## Validation
 
-Why
+Run tests:
 
-How it was tested
+```bash
+pytest -q
+```
 
-We will review your PR as soon as possible.
+Build the package:
 
-🧩 Code Style
-Use Python 3.10+ syntax
+```bash
+python -m build
+```
 
-Keep scanners modular (one vulnerability type = one file)
+Check package metadata:
 
-Avoid external dependencies unless absolutely necessary
+```bash
+python -m twine check dist/*
+```
 
-Document new scanners inside the README.md
+Optional install smoke test:
 
-🛡️ Security
-If your contribution involves a security fix, please:
+```bash
+python -m pip uninstall znuzhgfw -y
+python -m pip install dist/*.whl
+znuzhgfw --help
+```
 
-Mention it clearly in your PR
+On PowerShell, expand the wheel path explicitly if wildcard installation does not resolve:
 
-Avoid publicly sharing exploit details
+```powershell
+python -m pip install (Get-ChildItem dist\*.whl | Select-Object -ExpandProperty FullName)
+```
 
-Email responsible disclosures to: znuz@yaani.com
+## Contribution Guidelines
 
-🙏 Thank You
-Every contribution makes ZNUZHGFW better.
-Your help is appreciated — welcome to the project!
+- Prefer clear, direct implementations over clever ones.
+- Keep scanner behavior evidence-oriented.
+- Do not raise severity based on weak patterns alone.
+- Preserve backward compatibility for documented CLI options unless there is a strong reason to change them.
+- Add tests for bug fixes and regression-prone behavior.
+- Keep documentation accurate and aligned with the current codebase.
+
+## Security-Related Changes
+
+If your change fixes a vulnerability in the project itself, avoid disclosing sensitive details in a public issue before maintainers review it. Follow the private reporting guidance in [SECURITY.md](SECURITY.md).
+
+## Code of Conduct
+
+By participating in this project, you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).

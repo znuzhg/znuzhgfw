@@ -6,6 +6,11 @@
 /before_old.json
 /after_new.json
 /TECHNICAL_STATUS_REPORT.md
+/test.html
+/testenv/
+/.venv/
+/venv/
+/env/
 *.egg-info/
 __pycache__/
 *.py[cod]

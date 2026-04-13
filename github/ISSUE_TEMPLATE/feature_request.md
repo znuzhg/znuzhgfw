@@ -1,40 +1,39 @@
 ---
-name: "🚀 Feature request"
-about: "Suggest an idea or improvement for ZNUZHGFW"
+name: "Feature request"
+about: "Suggest an improvement for znuzhgfw"
 title: "[FEATURE] <short description>"
 labels: enhancement
 assignees: ""
 ---
 
-## 🌟 Describe the Feature
+## Describe the Request
+
 What new feature or improvement would you like to see?
 
-**Example:**  
-> Add a new SSRF scanner module.
+---
+
+## Why It Matters
+
+Explain why this change would improve the project for:
+
+- users
+- maintainers
+- security testing workflows
 
 ---
 
-## 💡 Why Is This Useful?
-Explain why this feature is beneficial for:
+## Proposed Approach
 
-- Users  
-- Developers  
-- Security testers  
+If you already have an implementation idea, describe it here.
 
 ---
 
-## 🛠️ Proposed Implementation  
-If you have ideas on how this feature can be implemented, describe them here.
+## Related Areas
 
-**Example:**  
-> Implement as a plugin under `znuzhgfw/scanners/ssrf.py`.
-
----
-
-## 🔗 Related Issues / Scanners
 Link any related issues or scanner modules if relevant.
 
 ---
 
-## 📝 Additional Notes
+## Additional Notes
+
 Add any other context, discussion points, or references here.

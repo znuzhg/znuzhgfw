@@ -1,18 +1,19 @@
 ---
-name: "🧪 Custom Issue"
+name: "Custom issue"
 about: "Use this template for any issue type not covered by the bug or feature templates."
 title: "[CUSTOM] <short description>"
 labels: ""
 assignees: ""
 ---
 
-## 📌 Summary  
-Describe the purpose of this issue.  
-Explain briefly what needs to be discussed, fixed, or reviewed.
+## Summary
+
+Describe the purpose of this issue and what needs to be discussed, fixed, or reviewed.
 
 ---
 
-## 🧩 Details  
+## Details
+
 Provide all relevant details:
 
 - What is happening?
@@ -21,7 +22,8 @@ Provide all relevant details:
 
 ---
 
-## 🔍 Steps to Reproduce (If applicable)
+## Steps to Reproduce
+
 If this issue relates to unexpected behavior, list the steps:
 
 1. Step one  
@@ -30,15 +32,15 @@ If this issue relates to unexpected behavior, list the steps:
 
 ---
 
-## 📁 Environment Info (If applicable)
+## Environment
 
 - OS:
 - Python version:
-- ZNUZHGFW version:
+- `znuzhgfw` version:
 - Installation method (pip/local/git):
 
 ---
 
-## 💭 Additional Notes  
-Anything else you want to add.  
-Links, ideas, discussions, references — everything goes here.
+## Additional Notes
+
+Anything else that helps reviewers understand the issue goes here.

@@ -1,59 +1,47 @@
-# 🔐 Security Policy
+# Security Policy
 
-ZNUZHGFW projesinin güvenliği temel önceliğimizdir.  
-Bu politika, hangi sürümlerin güvenlik güncellemeleri aldığı ve güvenlik açıklarının nasıl rapor edileceğini açıklamaktadır.
+The security of `znuzhgfw` matters. This document explains which versions receive security attention and how to report vulnerabilities in the project itself.
 
----
+## Supported Versions
 
-## ✅ Supported Versions
+Security fixes are applied to the current release line.
 
-Aşağıdaki tablo, projenin hangi sürümlerine aktif güvenlik desteği sağlandığını gösterir:
+| Version | Support Status |
+| --- | --- |
+| `0.4.x` | Supported |
+| `< 0.4` | Not supported |
 
-| Version   | Supported              |
-|---------- |------------------------|
-| 0.3.x     | ✔️ Active support       |
-| 0.2.x     | ❌ Not supported        |
-| < 0.2     | ❌ Not supported        |
+If you are reporting a bug in an older release, reproduce it on the latest published version first when possible.
 
-> **Not:** Yalnızca en güncel ana sürüm aktif olarak güvenlik yamaları alır.
+## Reporting a Vulnerability
 
----
+If you believe you found a vulnerability in `znuzhgfw` itself, please report it privately.
 
-## 🚨 Reporting a Vulnerability
+Contact:
 
-ZNUZHGFW’de güvenlik açığı bulduğunuzu düşünüyorsanız, lütfen sorumlu şekilde bildirin.
+- `contact@znuzhg.dev`
 
-### 📩 Nasıl rapor edilir?
+Please include:
 
-Tüm güvenlik açıklarını şu e-posta adresine gönderin:
+- a short description of the issue
+- affected version or commit
+- reproduction steps
+- expected behavior and observed behavior
+- impact assessment
+- proof-of-concept details if they are needed to reproduce the issue
 
-**📧 znuz@yaani.com**
+## Disclosure Expectations
 
-### Raporlamada lütfen şunları ekleyin:
+- Do not open a public GitHub issue for sensitive security details.
+- Do not publish exploit details before maintainers have had a reasonable chance to investigate and respond.
+- Provide enough detail for reliable reproduction.
 
-- Açığın kısa açıklaması  
-- Açığı tetikleyen adımlar  
-- Beklenen / gerçekleşen davranış  
-- Etki seviyesi (örn: XSS, SSRF, RCE potansiyeli)  
-- Mümkünse PoC (Proof-of-Concept)
+## Response Expectations
 
-### 🔒 Bizden ne bekleyebilirsiniz?
+Best effort goals:
 
-- Tüm raporlar **48 saat içinde** onaylanır.  
-- Değerlendirme süreci boyunca sizinle iletişimde kalırız.  
-- Kritik güvenlik açıkları en geç **7 gün içinde** yamalanır.  
-- Fix yayınlanmadan önce açığın detayları **gizli tutulur**.
+- acknowledge receipt within 72 hours
+- provide an initial triage update after review
+- coordinate remediation and disclosure timing where appropriate
 
-### ❗ Önemli
-
-- Güvenlik açıklarını **public issue olarak açmayın.**  
-- Açığın kötüye kullanılmasına yol açabilecek PoC’leri public paylaşmayın.  
-- Yamanın uygulanmasından sonra, istersek sizinle birlikte “Security Advisory” yayınlayabiliriz.
-
----
-
-## 🛡 Responsible Disclosure
-
-Topluluğumuz sorumlu güvenlik bildirim kültürünü teşvik eder.  
-Etik davranarak bu projeyi daha güvenli hale getirdiğiniz için teşekkür ederiz.
-
+Response times may vary depending on severity, complexity, and maintainer availability.
