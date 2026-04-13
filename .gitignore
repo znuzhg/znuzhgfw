@@ -1,0 +1,11 @@
+/build/
+/dist/
+/logs/
+/.pytest_cache/
+/report.html
+/before_old.json
+/after_new.json
+/TECHNICAL_STATUS_REPORT.md
+*.egg-info/
+__pycache__/
+*.py[cod]

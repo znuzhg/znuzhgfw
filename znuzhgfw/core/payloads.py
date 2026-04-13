@@ -8,16 +8,25 @@ BOOLEAN_PAIRS = [
 ]
 
 SQL_ERROR_PATTERNS = [
-    "you have an error in your sql syntax",
-    "warning: mysql",
-    "warning: mysqli",
-    "mysql_fetch",
-    "mysql_num_rows",
-    "mysqli_query()",
-    "pdoexception",
-    "sqlstate",
-    "unclosed quotation mark",
-    "quoted string not properly terminated",
+    r"sql syntax.*mysql",
+    r"warning.*mysql",
+    r"warning.*mysqli",
+    r"mysql_fetch",
+    r"mysql_num_rows",
+    r"mysqli_query",
+    r"pdoexception",
+    r"sqlstate\[[0-9a-z]+\]",
+    r"unclosed quotation mark",
+    r"quoted string not properly terminated",
+    r"postgresql.*error",
+    r"warning.*pg_",
+    r"pg_query",
+    r"ora-\d{4,}",
+    r"microsoft oledb provider for sql server",
+    r"odbc sql server driver",
+    r"sqlite error",
+    r"sqlite_exception",
+    r"syntax error at or near",
 ]
 
 TIME_PAYLOADS = [

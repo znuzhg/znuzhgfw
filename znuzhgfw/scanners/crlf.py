@@ -1,45 +1,83 @@
-from urllib.parse import urlparse, parse_qs, urlencode
+from __future__ import annotations
 
 from znuzhgfw.core.payloads import CRLF_PAYLOADS
 from znuzhgfw.core.scanner_base import ScannerBase
+from znuzhgfw.core.utils import (
+    ScanContext,
+    get_query_params,
+    inject_param_to_url,
+    is_candidate_param,
+    normalize_url,
+)
 
 
 class CRLFScanner(ScannerBase):
-    def _inject(self, url: str, param: str, payload: str) -> str:
-        parsed = urlparse(url)
-        qs = parse_qs(parsed.query)
-        if not qs:
-            return url
-        qs[param] = [payload]
-        new_q = urlencode(qs, doseq=True)
-        return parsed._replace(query=new_q).geturl()
+    def should_scan(self, context: ScanContext) -> bool:
+        return bool(context.target.query) and not context.is_static
 
-    def scan(self, url: str, html: str | None = None):
-        parsed = urlparse(url)
-        qs = parse_qs(parsed.query)
-        if not qs:
+    def scan(
+        self,
+        url: str,
+        html: str | None = None,
+        context: ScanContext | None = None,
+    ) -> None:
+        params = get_query_params(url)
+        if not params:
             return
-        self.logger.log(f"[CRLF] Testing {url}")
-        for param in qs.keys():
+
+        baseline_headers = (
+            {key.lower(): value for key, value in context.response.headers.items()}
+            if context is not None and context.response is not None
+            else {}
+        )
+        self.logger.log(f"[CRLF] Testing {normalize_url(url)}")
+        for param in params:
+            if not is_candidate_param(param):
+                continue
             for payload in CRLF_PAYLOADS:
+                injected_url = inject_param_to_url(url, param, payload)
                 try:
-                    inj_url = self._inject(url, param, payload)
-                    r = self.session.get(
-                        inj_url, verify=False, timeout=10, allow_redirects=False
+                    response = self.session.get(
+                        injected_url,
+                        verify=False,
+                        timeout=10,
+                        allow_redirects=False,
                     )
-                except Exception as e:
-                    self.logger.log(f"[CRLF] Error {url}: {e}")
+                except Exception as exc:
+                    self.logger.log(f"[CRLF] Error {url}: {exc}")
                     continue
 
-                # Header injection tespiti için kaba kontrol:
-                headers_text = "\n".join(f"{k}: {v}" for k, v in r.headers.items())
-                if "X-Evil:1" in headers_text or "crlf=1" in headers_text:
-                    detail = f"Param: {param}\nPayload: {payload}\nInjected header pattern seen."
-                    self.report.add(
-                        severity="medium",
-                        title="CRLF Injection suspicion",
-                        url=inj_url,
-                        detail=detail,
-                        category="CRLF Injection",
-                        scanner="CRLFScanner",
-                    )
+                candidate_headers = {
+                    key.lower(): value for key, value in response.headers.items()
+                }
+                new_headers: list[str] = []
+                for header_name in ("x-evil", "set-cookie"):
+                    baseline_value = baseline_headers.get(header_name, "")
+                    candidate_value = candidate_headers.get(header_name, "")
+                    if candidate_value and candidate_value != baseline_value:
+                        new_headers.append(f"{header_name}: {candidate_value}")
+
+                if not new_headers:
+                    continue
+
+                self.report.add(
+                    severity="MEDIUM",
+                    title="CRLF injection likely",
+                    url=injected_url,
+                    normalized_url=normalize_url(url),
+                    detail="Injected header markers were introduced after the CRLF payload.",
+                    category="CRLF Injection",
+                    scanner="CRLFScanner",
+                    evidence={
+                        "param": param,
+                        "payload": payload,
+                        "new_headers": new_headers,
+                        "status_code": response.status_code,
+                    },
+                    confidence="HIGH",
+                    proof_level="verified",
+                    tags=["crlf", "verified"],
+                    param=param,
+                    payload=payload,
+                )
+                break

@@ -1,2 +1,0 @@
-[console_scripts]
-znuzhgfw = znuzhgfw.main:main
